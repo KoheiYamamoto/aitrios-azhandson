@@ -2,7 +2,6 @@ import os
 import logging
 import azure.functions as func
 from azure.cosmos import CosmosClient
-# azure-cosmosdb-table
 
 endpoint = os.environ['CosmosDBEndpoint']
 key = os.environ['CosmosDBKey']
@@ -26,7 +25,7 @@ def main(documents: func.DocumentList) -> str:
                         'id': document.get('id') + '-' + str(counter),
                         'DeviceID': document.get('DeviceID'),
                         'ModelID': document.get('ModelID'),
-                        'Class': 'Banana' if result.get('C') == '1' else 'Apple', # 1: Banana, 0: Apple
+                        'Class': 'Banana' if result.get('C') == 1 else 'Apple', # 1: Banana, 0: Apple
                         'P': result.get('P'),
                         'Left': result.get('Left'),
                         'Top': result.get('Top'),
