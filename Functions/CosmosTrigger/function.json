@@ -5,11 +5,12 @@
       "type": "cosmosDBTrigger",
       "name": "documents",
       "direction": "in",
-      "leaseCollectionName": "leases",
-      "connectionStringSetting": "aitriosazhandson00001_DOCUMENTDB",
+      "leaseContainerName": "leases",
+      "connection": "aitriosazcosmosuser00_DOCUMENTDB",
       "databaseName": "Raw",
-      "collectionName": "Items",
-      "createLeaseCollectionIfNotExists": true
+      "containerName": "Items",
+      "createLeaseContainerIfNotExists": true,
+      "startFromBeginning": false
     }
   ]
 }
